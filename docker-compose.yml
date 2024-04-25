@@ -1,0 +1,12 @@
+version: '3'
+services:
+  couchbase:
+    image: couchbase/server:latest
+    ports:
+      - "8091-8094:8091-8094"
+      - "11210:11210"
+    volumes:
+      - ./couchbase:/opt/couchbase/var
+    environment:
+      - COUCHBASE_ADMINISTRATOR_USERNAME=admin
+      - COUCHBASE_ADMINISTRATOR_PASSWORD=password
